@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ログインフォーム</title>
+</head>
+<body>
+    <h1>ログイン</h1>
+    <input type="text" id="username" placeholder="UserName">
+    <br>
+    <input type="password" id="password" placeholder="Password">
+    <br>
+    <button type="submit" id="sendButton">Login</button>
+    <br>
+    <p id="error">透明</p>
+
+    <!-- ここからJavaScript -->
+    <script>
+        var button = document.getElementById("sendButton");
+        button.addEventListener("click", (e) => {
+            e.preventDefault();
+            
+            // var username = document.getElementById("username").value;
+            var username = document.getElementById("username");
+            var password = document.getElementById("password");
+            
+            // document.getElementById('username').value = '';
+            
+            console.log(`入力されたUserName: ${username.value}`);
+            console.log(`入力されたPassWord: ${password.value}`);
+            
+            username.value = '';
+            password.value = '';
+
+            isSuccess(username, password);
+        }
+        
+    );
+
+    function isSuccess(username, password) {
+        if(username == 'admin') {
+            if(password == '0'){
+                console.log('ログイン成功')
+                window.location.href = 'C:\Users\nnesk\python_apps\hacking_sample\brute-force_attack\target\success.html'
+            } else () => showError;
+        }else () => showError;
+    }
+
+    function showError() {
+        var errorMessage = 'ユーザー名またはパスワードが違います';
+        console.log(errorMessage);
+        document.getElementById('error').value = errorMessage;
+    }
+    </script>
+</body>
+</html>
