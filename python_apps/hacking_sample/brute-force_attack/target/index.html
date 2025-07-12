@@ -13,7 +13,7 @@
     <br>
     <button type="submit" id="sendButton">Login</button>
     <br>
-    <p id="error">透明</p>
+    <p id="error"></p>
 
     <!-- ここからJavaScript -->
     <script>
@@ -30,21 +30,23 @@
             console.log(`入力されたUserName: ${username.value}`);
             console.log(`入力されたPassWord: ${password.value}`);
             
+            isSuccess(username, password);
+            
             username.value = '';
             password.value = '';
-
-            isSuccess(username, password);
+            
         }
         
     );
-
+    
     function isSuccess(username, password) {
-        if(username == 'admin') {
-            if(password == '0'){
+        if(username.value == 'admin') {
+            console.log('ユーザー名があっています')
+            if(password.value == '0'){
                 console.log('ログイン成功')
                 window.location.href = 'C:\Users\nnesk\python_apps\hacking_sample\brute-force_attack\target\success.html'
-            } else () => showError;
-        }else () => showError;
+            } else showError();
+        }else showError();
     }
 
     function showError() {
